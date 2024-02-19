@@ -12,9 +12,10 @@ export interface Props {
 		url: string;
 		image?: string;
 	};
+	noMaxWidth?: boolean;
 }
 
-const { title, metadata, activePage } = Astro.props;
+const { title, metadata, activePage, noMaxWidth } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -42,8 +43,8 @@ const { title, metadata, activePage } = Astro.props;
 		<title>{`${title} | Raymond Zhao`}</title>
 	</head>
 	<body class='bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-300'>
-		<Navbar activePage={activePage} />
-		<div class='page-content'>
+		<Navbar activePage={activePage} noMaxWidth={noMaxWidth} />
+		<div class={`page-content mx-auto ${noMaxWidth ? "" : "max-w-screen-xl"} px-6`}>
 			<slot />
 		</div>
 		<Footer />

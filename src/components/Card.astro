@@ -13,7 +13,7 @@ const { name, image, link, border, bgColor } = Astro.props;
 <div class={`base-card w-16 p-0.5 bg-gradient-to-br relative border-r-2 ${border ?? "dark:border-white border-black"}`}>
 	<div class={`group rounded-md`}>
 		<a href={link}>
-			<div class='rounded-md h-[2rem] mx-auto my-auto'>
+			<div class='rounded-md h-[2rem] mx-auto my-auto flex items-center'>
 				<img src={image} alt={name} class={`max-h-[2rem] p-1 mx-auto my-auto`} />
 			</div>
 		</a>
