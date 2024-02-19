@@ -1,0 +1,652 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Card from "../components/Card.astro";
+
+interface SkillCard {
+	name: string;
+	link: string;
+	image: string;
+	bgColor?: string;
+}
+
+interface Skills {
+	mastered: {
+		languages: SkillCard[];
+		frameworks: SkillCard[];
+		technologies: SkillCard[];
+	};
+	learned: {
+		languages: SkillCard[];
+		frameworks: SkillCard[];
+		technologies: SkillCard[];
+	};
+	learning: {
+		languages: SkillCard[];
+		frameworks: SkillCard[];
+		technologies: SkillCard[];
+	};
+}
+
+const skills: Skills = {
+	mastered: {
+		languages: [
+			{
+				name: "HTML",
+				link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+				image: "/assets/skills/HTML5.png",
+			},
+			{
+				name: "CSS",
+				link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+				image: "/assets/skills/CSS3.png",
+			},
+			{
+				name: "JavaScript",
+				link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+				image: "/assets/skills/JavaScript.png",
+			},
+			{
+				name: "TypeScript",
+				link: "https://www.typescriptlang.org",
+				image: "/assets/skills/TypeScript.png",
+			},
+
+			{
+				name: "Java",
+				link: "https://www.java.com",
+				image: "/assets/skills/Java.png",
+			},
+			{
+				name: "Python",
+				link: "https://www.python.com",
+				image: "/assets/skills/Python.png",
+			},
+			{
+				name: "C++",
+				link: "https://isocpp.org/",
+				image: "/assets/skills/cpp.png",
+			},
+			{
+				name: "C",
+				link: "https://en.wikipedia.org/wiki/C_(programming_language)",
+				image: "/assets/skills/C.png",
+			},
+			{
+				name: "Mathematica",
+				link: "https://www.wolfram.com/mathematica",
+				image: "/assets/skills/Mathematica.png",
+			},
+			{
+				name: "R",
+				link: "https://www.r-project.org",
+				image: "/assets/skills/R.png",
+			},
+			{
+				name: "Bash",
+				link: "https://www.gnu.org/software/bash/",
+				image: "/assets/skills/bash.png",
+			},
+			{
+				name: "SQL",
+				link: "https://en.wikipedia.org/wiki/SQL",
+				image: "/assets/skills/SQL.png",
+			},
+		],
+		frameworks: [
+			{
+				name: "jQuery",
+				link: "https://jquery.com",
+				image: "/assets/skills/jquery.png",
+			},
+			{
+				name: "React",
+				link: "https://reactjs.org",
+				image: "/assets/skills/React.png",
+				bgColor: "bg-gray-800",
+			},
+			{
+				name: "Tailwind",
+				link: "https://tailwindcss.com",
+				image: "/assets/skills/tailwind.jpg",
+			},
+			{
+				name: "Bootstrap",
+				link: "https://getbootstrap.com",
+				image: "/assets/skills/Bootstrap.png",
+			},
+			{
+				name: "Express.js",
+				link: "https://expressjs.com",
+				image: "/assets/skills/ExpressJS.png",
+			},
+			{
+				name: "Next.js",
+				link: "https://nextjs.org",
+				image: "/assets/skills/Next.png",
+			},
+			{
+				name: "Gatsby",
+				link: "https://gatsbyjs.com",
+				image: "/assets/skills/Gatsby.png",
+			},
+			{
+				name: "Astro",
+				link: "https://astro.build",
+				image: "/assets/skills/astro.png",
+			},
+			{
+				name: "Material-UI",
+				link: "https://mui.com",
+				image: "/assets/skills/mui.png",
+			},
+			{
+				name: "Handlebars",
+				link: "https://handlebarsjs.com",
+				image: "/assets/skills/Handlebars.png",
+			},
+		],
+		technologies: [
+			{
+				name: "Git",
+				link: "https://git-scm.com",
+				image: "/assets/skills/Git.png",
+			},
+			{
+				name: "GitHub",
+				link: "https://github.com",
+				image: "/assets/skills/GitHub.png",
+			},
+			{
+				name: "Gradle",
+				link: "https://gradle.org",
+				image: "/assets/skills/gradle.png",
+			},
+			{
+				name: "Maven",
+				link: "https://maven.apache.org",
+				image: "/assets/skills/Maven.png",
+			},
+			{
+				name: "Heroku",
+				link: "https://heroku.com",
+				image: "/assets/skills/heroku.png",
+			},
+			{
+				name: "Salesforce",
+				link: "https://salesforce.com",
+				image: "/assets/skills/salesforce.png",
+			},
+			{
+				name: "Cloudflare",
+				link: "https://www.cloudflare.com",
+				image: "/assets/skills/Cloudflare.png",
+			},
+			{
+				name: "Node.js",
+				link: "https://nodejs.org",
+				image: "/assets/skills/Node.png",
+			},
+		],
+	},
+	learned: {
+		languages: [
+			{
+				name: "LaTeX",
+				link: "https://www.latex-project.org/",
+				image: "/assets/skills/LaTeX.png",
+			},
+		],
+		frameworks: [
+			{
+				name: "Svelte",
+				link: "https://svelte.dev",
+				image: "/assets/skills/Svelte.png",
+			},
+		],
+		technologies: [
+			{
+				name: "AWS",
+				link: "https://aws.amazon.com",
+				image: "/assets/skills/AWS.png",
+			},
+		],
+	},
+	learning: {
+		languages: [
+			{
+				name: "Go",
+				link: "https://go.dev",
+				image: "/assets/skills/Go.png",
+			},
+			{
+				name: "Rust",
+				link: "https://www.rust-lang.org",
+				image: "/assets/skills/Rust.png",
+			},
+		],
+		frameworks: [
+			{
+				name: "Vue",
+				link: "https://vuejs.org",
+				image: "/assets/skills/Vue.png",
+			},
+		],
+		technologies: [
+			{
+				name: "Docker",
+				link: "https://www.docker.com",
+				image: "/assets/skills/docker.webp",
+			},
+			{
+				name: "Kubernetes",
+				link: "https://kubernetes.io",
+				image: "/assets/skills/Kubernetes.png",
+			},
+		],
+	},
+};
+---
+
+<BaseLayout
+	title='Skills'
+	activePage='Skills'
+	metadata={{
+		description: "What I'm currently capable of, and what I'm currently working on.",
+		url: "https://raymondzhao.com",
+	}}
+>
+	<div class="w-11/12 mx-auto mt-10">
+		<h1 class="text-3xl lg:ml-20 font-semibold text-green-800 dark:text-green-400 mb-5">
+			SKILLS
+		</h1>
+		<div class="flex flex-row lg:hidden" style="transform: skewX(-15deg)">
+			<div class="h-8 bg-green-400 flex items-center px-2">
+				<p class="text-sm text-black text-semibold" style="transform: skewX(15deg)">MASTERED</p>
+			</div>
+			<div class="h-8 bg-green-700 flex items-center px-2">
+				<p class="text-sm text-black text-semibold" style="transform: skewX(15deg)">LEARNED</p>
+			</div>
+			<div class="h-8 bg-green-950 flex items-center px-2">
+				<p class="text-sm text-gray-200 text-semibold" style="transform: skewX(15deg)">LEARNING</p>
+			</div>
+		</div>
+	</div>
+	<div class="w-11/12 mx-auto hidden lg:flex flex-col">
+		<div class="flex flex-row">
+			<div class="w-20">
+				{/* This is a spacer */}
+			</div>
+			<div class="flex-1 flex items-center mb-3 mr-5">
+				<div class="text-sm font-semibold dark:text-gray-400 text-gray-700" id="languages-lg">
+				</div>
+				<div class="flex-grow">
+					<hr class="dark:border-gray-400 border-gray-700 ml-3">
+				</div>
+			</div>
+			<div class="flex-1 flex items-center mb-3 mr-5">
+				<div class="text-sm font-semibold dark:text-gray-400 text-gray-700" id="frameworks-lg">
+
+				</div>
+				<div class="flex-grow">
+					<hr class="dark:border-gray-400 border-gray-700 ml-3">
+				</div>
+			</div>
+			<div class="flex-1 flex items-center mb-3">
+				<div class="text-sm font-semibold dark:text-gray-400 text-gray-700" id="technologies-lg">
+
+				</div>
+				<div class="flex-grow">
+					<hr class="dark:border-gray-400 border-gray-700 ml-3">
+				</div>
+			</div>
+		</div>
+		<div class="flex flex-row">
+			<div class="w-20 flex flex-col items-center justify-center">
+				<div class="bg-green-400 p-2" style="transform: rotate(-90deg) skewX(-15deg);">
+					<p class="text-black font-semibold text-sm" style="transform: skewX(15deg);">MASTERED</p>
+				</div>
+			</div>
+			<ul class="flex-1">
+				{
+					skills.mastered.languages.map((skill) => (
+						<li class="flex flex-row items-center">
+							<Card name={skill.name} link={skill.link} image={skill.image} bgColor={skill?.bgColor} border="border-green-400" />
+							<h3 class='ml-3 text-sm dark:text-gray-200 text-black'><a href={skill.link}>{skill.name}</a></h3>
+						</li>
+					))
+				}
+			</ul>
+			<ul class="flex-1">
+				{
+					skills.mastered.frameworks.map((skill) => (
+						<li class="flex flex-row items-center">
+							<Card name={skill.name} link={skill.link} image={skill.image} bgColor={skill?.bgColor} border="border-green-400" />
+							<h3 class='ml-3 text-sm dark:text-gray-200 text-black'><a href={skill.link}>{skill.name}</a></h3>
+						</li>
+					))
+				}
+			</ul>
+			<ul class="flex-1">
+				{
+					skills.mastered.technologies.map((skill) => (
+						<li class="flex flex-row items-center">
+							<Card name={skill.name} link={skill.link} image={skill.image} bgColor={skill?.bgColor} border="border-green-400" />
+							<h3 class='ml-3 text-sm dark:text-gray-200 text-black'><a href={skill.link}>{skill.name}</a></h3>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+		<div class="py-5 flex flex-row">
+			<div class="w-20 flex-none">
+				{/* This is a spacer */}
+			</div>
+			<hr class="dark:border-gray-600 border-gray-400 flex-grow">
+		</div>
+		<div class="flex flex-row">
+			<div class="w-20 flex flex-col items-center justify-center">
+				<div class="bg-green-700 p-2" style="transform: rotate(-90deg) skewX(-15deg);">
+					<p class="text-black font-semibold text-sm" style="transform: skewX(15deg);">LEARNED</p>
+				</div>
+			</div>
+			<ul class="flex-1">
+				{
+					skills.learned.languages.map((skill) => (
+						<li class="flex flex-row items-center">
+							<Card name={skill.name} link={skill.link} image={skill.image} bgColor={skill?.bgColor} border="border-green-700" />
+							<h3 class='ml-3 text-sm dark:text-gray-300 text-gray-800'><a href={skill.link}>{skill.name}</a></h3>
+						</li>
+					))
+				}
+			</ul>
+			<ul class="flex-1">
+				{
+					skills.learned.frameworks.map((skill) => (
+						<li class="flex flex-row items-center">
+							<Card name={skill.name} link={skill.link} image={skill.image} bgColor={skill?.bgColor} border="border-green-700" />
+							<h3 class='ml-3 text-sm dark:text-gray-300 text-gray-800'><a href={skill.link}>{skill.name}</a></h3>
+						</li>
+					))
+				}
+			</ul>
+			<ul class="flex-1">
+				{
+					skills.learned.technologies.map((skill) => (
+						<li class="flex flex-row items-center">
+							<Card name={skill.name} link={skill.link} image={skill.image} bgColor={skill?.bgColor} border="border-green-700" />
+							<h3 class='ml-3 text-sm dark:text-gray-300 text-gray-800'><a href={skill.link}>{skill.name}</a></h3>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+		<div class="py-5 flex flex-row">
+			<div class="w-20 flex-none">
+				{/* This is a spacer */}
+			</div>
+			<hr class="dark:border-gray-600 border-gray-400 flex-grow">
+		</div>
+		<div class="flex flex-row">
+			<div class="w-20 flex flex-col items-center justify-center">
+				<div class="bg-green-950 p-2" style="transform: rotate(-90deg) skewX(-15deg);">
+					<p class="text-white font-semibold text-sm" style="transform: skewX(15deg);">LEARNING</p>
+				</div>
+			</div>
+			<ul class="flex-1">
+				{
+					skills.learning.languages.map((skill) => (
+						<li class="flex flex-row items-center">
+							<Card name={skill.name} link={skill.link} image={skill.image} bgColor={skill?.bgColor} border="border-green-950" />
+							<h3 class='ml-3 text-sm dark:text-gray-400 text-gray-700'><a href={skill.link}>{skill.name}</a></h3>
+						</li>
+					))
+				}
+			</ul>
+			<ul class="flex-1">
+				{
+					skills.learning.frameworks.map((skill) => (
+						<li class="flex flex-row items-center">
+							<Card name={skill.name} link={skill.link} image={skill.image} bgColor={skill?.bgColor} border="border-green-950" />
+							<h3 class='ml-3 text-sm dark:text-gray-400 text-gray-700'><a href={skill.link}>{skill.name}</a></h3>
+						</li>
+					))
+				}
+			</ul>
+			<ul class="flex-1">
+				{
+					skills.learning.technologies.map((skill) => (
+						<li class="flex flex-row items-center">
+							<Card name={skill.name} link={skill.link} image={skill.image} bgColor={skill?.bgColor} border="border-green-950" />
+							<h3 class='ml-3 text-sm dark:text-gray-400 text-gray-700'><a href={skill.link}>{skill.name}</a></h3>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+		<div class="py-5 flex flex-row">
+			<div class="w-20 flex-none">
+				{/* This is a spacer */}
+			</div>
+			<hr class="dark:border-gray-600 border-gray-400 flex-grow">
+		</div>
+	</div>
+	<div class="w-11/12 mx-auto flex lg:hidden md:flex-row flex-col">
+		<div class="flex-1 md:mr-5">
+			<div class="flex items-center mt-5 mb-3">
+				<div class="text-sm font-semibold dark:text-gray-400 text-gray-700" id="languages">
+				</div>
+				<div class="flex-grow">
+					<hr class="dark:border-gray-400 border-gray-700 ml-3">
+				</div>
+			</div>
+			<ul>
+				{
+					skills.mastered.languages.map((skill) => (
+						<li class="flex flex-row items-center">
+							<Card name={skill.name} link={skill.link} image={skill.image} bgColor={skill?.bgColor} border="border-green-400" />
+							<h3 class='ml-3 text-sm dark:text-gray-200 text-black'><a href={skill.link}>{skill.name}</a></h3>
+						</li>
+					))
+				}
+				<li class="h-10"></li>
+				{
+					skills.learned.languages.map((skill) => (
+						<li class="flex flex-row items-center">
+							<Card name={skill.name} link={skill.link} image={skill.image} bgColor={skill?.bgColor} border="border-green-700" />
+							<h3 class='ml-3 text-sm dark:text-gray-300 text-gray-800'><a href={skill.link}>{skill.name}</a></h3>
+						</li>
+					))
+				}
+				<li class="h-10"></li>
+				{
+					skills.learning.languages.map((skill) => (
+						<li class="flex flex-row items-center">
+							<Card name={skill.name} link={skill.link} image={skill.image} bgColor={skill?.bgColor} border="border-green-950" />
+							<h3 class='ml-3 text-sm dark:text-gray-400 text-gray-700'><a href={skill.link}>{skill.name}</a></h3>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+		<div class="flex-1 md:mr-5">
+			<div class="flex items-center mt-5 mb-3">
+				<div class="text-sm font-semibold dark:text-gray-400 text-gray-700" id="frameworks">
+
+				</div>
+				<div class="flex-grow">
+					<hr class="dark:border-gray-400 border-gray-700 ml-3">
+				</div>
+			</div>
+			<ul>
+				{
+					skills.mastered.frameworks.map((skill) => (
+						<li class="flex flex-row items-center">
+							<Card name={skill.name} link={skill.link} image={skill.image} bgColor={skill?.bgColor} border="border-green-400" />
+							<h3 class='ml-3 text-sm dark:text-gray-200 text-black'><a href={skill.link}>{skill.name}</a></h3>
+						</li>
+					))
+				}
+				<li class="h-10"></li>
+				{
+					skills.learned.frameworks.map((skill) => (
+						<li class="flex flex-row items-center">
+							<Card name={skill.name} link={skill.link} image={skill.image} bgColor={skill?.bgColor} border="border-green-700" />
+							<h3 class='ml-3 text-sm dark:text-gray-300 text-gray-800'><a href={skill.link}>{skill.name}</a></h3>
+						</li>
+					))
+				}
+				<li class="h-10"></li>
+				{
+					skills.learning.frameworks.map((skill) => (
+						<li class="flex flex-row items-center">
+							<Card name={skill.name} link={skill.link} image={skill.image} bgColor={skill?.bgColor} border="border-green-950" />
+							<h3 class='ml-3 text-sm dark:text-gray-400 text-gray-700'><a href={skill.link}>{skill.name}</a></h3>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+		<div class="flex-1">
+			<div class="flex items-center mt-5 mb-3">
+				<div class="text-sm font-semibold dark:text-gray-400 text-gray-700" id="technologies">
+
+				</div>
+				<div class="flex-grow">
+					<hr class="dark:border-gray-400 border-gray-700 ml-3">
+				</div>
+			</div>
+			<ul>
+				{
+					skills.mastered.technologies.map((skill) => (
+						<li class="flex flex-row items-center">
+							<Card name={skill.name} link={skill.link} image={skill.image} bgColor={skill?.bgColor} border="border-green-400" />
+							<h3 class='ml-3 text-sm dark:text-gray-200 text-black'><a href={skill.link}>{skill.name}</a></h3>
+						</li>
+					))
+				}
+				<li class="h-10"></li>
+				{
+					skills.learned.technologies.map((skill) => (
+						<li class="flex flex-row items-center">
+							<Card name={skill.name} link={skill.link} image={skill.image} bgColor={skill?.bgColor} border="border-green-700" />
+							<h3 class='ml-3 text-sm dark:text-gray-300 text-gray-800'><a href={skill.link}>{skill.name}</a></h3>
+						</li>
+					))
+				}
+				<li class="h-10"></li>
+				{
+					skills.learning.technologies.map((skill) => (
+						<li class="flex flex-row items-center">
+							<Card name={skill.name} link={skill.link} image={skill.image} bgColor={skill?.bgColor} border="border-green-950" />
+							<h3 class='ml-3 text-sm dark:text-gray-400 text-gray-700'><a href={skill.link}>{skill.name}</a></h3>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+	</div>
+	<div class="w-11/12 mx-auto mt-10 flex flex-row">
+		<div class="lg:w-20 flex-none">
+			{/* This is a spacer */}
+		</div>
+		<div class="flex flex-col flex-grow">
+			<div class="flex items-center mt-5 mb-3">
+				<div class="text-sm font-semibold dark:text-gray-400 text-gray-700" id="what-does-that-mean">></div>
+				<div class="flex-grow">
+					<hr class="dark:border-gray-400 border-gray-700 ml-3">
+				</div>
+			</div>
+			<div class="text-md dark:text-gray-300 text-gray-800">
+				<p class="mb-5">These are the skills I've polished during my time as a developer,
+					both as a hobby and from experience.</p>
+
+				<p class="mb-2">Skills that are mastered are skills that I use on a daily basis,
+					and that I'm very comfortable working with.</p>
+				<p class="mb-2">Skills that are learned mean I have the basics down, but
+				    I'm still not fully off the learning curve.</p>
+				<p>Skills that I'm learning have been started to some extent,
+				    but I'm still not confident enough in them to do major work.</p>
+
+				<p class="mt-4 text-gray-500">(Yes, I know that some listed "Frameworks" are actually libraries. I didn't have enough room in the header.)</p>
+			</div>
+		</div>
+	</div>
+</BaseLayout>
+
+<script>
+	import TypeIt from 'typeit';
+
+	const languages = new TypeIt("#languages", {
+		strings: "LANGUAGES",
+		speed: 100,
+		startDelay: 1000,
+		afterComplete: function (instance) {
+			instance.destroy();
+			frameworks.go();
+		}
+	});
+
+	const frameworks = new TypeIt("#frameworks", {
+		strings: "FRAMEWORKS",
+		speed: 100,
+		startDelay: 500,
+		afterComplete: function (instance) {
+			instance.destroy();
+			technologies.go();
+		}
+	});
+
+	const technologies = new TypeIt("#technologies", {
+		strings: "TECHNOLOGIES",
+		speed: 100,
+		startDelay: 500,
+		afterComplete: function (instance) {
+			instance.destroy();
+		}
+	});
+
+	languages.go();
+
+	const languagesLg = new TypeIt("#languages-lg", {
+		strings: "LANGUAGES",
+		speed: 100,
+		startDelay: 1000,
+		afterComplete: function (instance) {
+			instance.destroy();
+			frameworksLg.go();
+		}
+	});
+
+	const frameworksLg = new TypeIt("#frameworks-lg", {
+		strings: "FRAMEWORKS",
+		speed: 100,
+		startDelay: 500,
+		afterComplete: function (instance) {
+			instance.destroy();
+			technologiesLg.go();
+		}
+	});
+
+	const technologiesLg = new TypeIt("#technologies-lg", {
+		strings: "TECHNOLOGIES",
+		speed: 100,
+		startDelay: 500,
+		afterComplete: function (instance) {
+			instance.destroy();
+			whatDoesThatMean.go();
+		}
+	});
+
+	const whatDoesThatMean = new TypeIt("#what-does-that-mean", {
+		strings: "WHAT THIS MEANS",
+		speed: 100,
+		startDelay: 500,
+		startDelete: true,
+		afterComplete: function (instance) {
+			instance.destroy();
+		}
+	})
+
+	languages.go();
+	languagesLg.go();
+</script>

@@ -1,0 +1,67 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+<style>
+	#sanity-gone {
+		background-image: url(/assets/projects/sanitygone.png);
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	#food {
+		background-image: url(/assets/projects/food.png);
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	#portfolio {
+		background-image: url(/assets/State_Street.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+</style>
+<BaseLayout
+	title="Projects"
+	activePage="Projects"
+	metadata={{
+		description: "Projects that I've done that I can showcase here.",
+		url: "https://raymondzhao.com",
+	}}>
+	<div class="w-11/12 mx-auto mt-5 flex-col">
+		<div class="my-5 rounded-md font-semibold flex">
+			<h1 class="text-3xl bg-gradient-to-r from-purple-600 to-blue-500 text-transparent bg-clip-text"
+			    id="about-me">PROJECTS</h1>
+		</div>
+		<div class="dark:text-white flex mx-auto sm:flex-row flex-col items-stretch mb-5">
+			<div id="sanity-gone" class="flex-none sm:w-1/3 w-full bg-top rounded-b-none sm:rounded-b-md rounded-t-md">
+				<img class="rounded-md sm:hidden block" src="/assets/projects/sanitygone.png" alt="Sanity;Gone">
+			</div>
+			<div class="sm:rounded-t-md rounded-b-md dark:bg-gray-800 bg-gray-300 flex-1 sm:ml-5 p-5">
+				<h2 class="text-xl text-purple-500 font-bold pb-1"><a href="https://sanitygone.help">Sanity;Gone</a></h2>
+				<p class="leading-snug dark:text-gray-300">A beautifully designed, responsive website providing strategy, game guides,
+					and data for the mobile game Arknights.</p>
+				<p class="leading-snug mt-2 dark:text-gray-300">Built using the static site generator stack, using HTML, CSS, TypeScript. Uses React and Next.js as its framework and the Contentful CMS to host guides, vanilla-extract and Headless-UI for styling, and FlexSearch for searching. Is deployed via Vercel.</p>
+				<p class="leading-snug mt-2 dark:text-gray-300">Formerly built using Gatsby, Emotion, and Material-UI. Is in the process of being rewritten and redesigned in a new Astro implementation.</p>
+			</div>
+		</div>
+		<div class="dark:text-white flex mx-auto sm:flex-row flex-col-reverse items-stretch mb-5">
+			<div class="sm:rounded-t-md rounded-b-md dark:bg-gray-800 bg-gray-300 flex-1 sm:mr-5 p-5">
+				<h2 class="text-xl text-blue-700 font-bold pb-1"><a href="https://food.stinggy.com">food.stinggy.com</a></h2>
+				<p class="leading-snug dark:text-gray-300">A simple website showcasing food reviews from restaurants I've tried in the Madison area.</p>
+				<p class="leading-snug mt-2 dark:text-gray-300">Built using an Express.js server, using HTML, CSS, JS. Uses Handlebars for templating, Tailwind for styling, and is hosted on a DigitalOcean VPS (behind a reverse proxy).</p>
+			</div>
+			<div id="food" class="flex-none sm:w-1/3 w-full bg-top rounded-b-none sm:rounded-b-md rounded-t-md">
+				<img class="rounded-md sm:hidden block" src="/assets/projects/food.png" alt="Sanity;Gone">
+			</div>
+		</div>
+		<div class="dark:text-white flex mx-auto sm:flex-row flex-col items-stretch mb-5">
+			<div id="portfolio" class="flex-none sm:w-1/3 w-full bg-top rounded-b-none sm:rounded-b-md rounded-t-md">
+				<img class="rounded-md sm:hidden block" src="/assets/State_Street.jpg" alt="Sanity;Gone">
+			</div>
+			<div class="sm:rounded-t-md rounded-b-md dark:bg-gray-800 bg-gray-300 flex-1 sm:ml-5 p-5">
+				<h2 class="text-xl text-blue-500 font-bold pb-1">raymondzhao.com</h2>
+				<p class="leading-snug dark:text-gray-300">My portfolio website. Believe it or not, you're on it right now.</p>
+				<p class="leading-snug mt-2 dark:text-gray-300">Built using the static site generator stack, using HTML, CSS, TypeScript. Uses Astro and Svelte as its framework, MDX for blog posts, Tailwind for styling. Is deployed via Vercel.</p>
+				<p class="leading-snug mt-2 dark:text-gray-300">Designed entirely by me, not copied from any templates. Fully responsive.</p>
+			</div>
+		</div>
+	</div>
+</BaseLayout>

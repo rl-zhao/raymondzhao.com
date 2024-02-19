@@ -1,0 +1,44 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+import "@fontsource/noto-sans";
+
+const { frontmatter } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<script is:inline>
+			// preload dark mode
+			let darkMode = localStorage.getItem("darkMode");
+			if (darkMode === "enabled") {
+				document.documentElement.classList.add("dark");
+			}
+		</script>
+		<meta charset='UTF-8' />
+		<meta name='viewport' content='width=device-width' />
+		<link rel='icon' type='image/x-icon' href='/favicon.ico' />
+		<meta name='generator' content={Astro.generator} />
+
+		<meta name='description' content='{{description}}' />
+
+		<!-- OpenGraphProtocol metadata -->
+		{frontmatter?.description && <meta property='og:description' content={frontmatter?.description} />}
+		<meta property='og:title' content={frontmatter.title} />
+		<meta property='og:type' content='website' />
+		{frontmatter?.url && <meta property='og:url' content={frontmatter?.url} />}
+		{frontmatter?.image && <meta property='og:image' content={frontmatter?.image} />}
+		<meta property='og:site_name' content='Raymond Zhao' />
+		<link rel='stylesheet' href='/css/darcula.css' />
+		<title>{`${frontmatter.title} | Raymond Zhao`}</title>
+	</head>
+	<body class='bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'>
+		<Navbar activePage='Blog' />
+		<div class='page-content my-5 prose prose-neutral dark:prose-invert prose-code:text-gray-200 w-11/12 max-w-5xl mx-auto'>
+			<slot />
+		</div>
+		<Footer />
+	</body>
+</html>

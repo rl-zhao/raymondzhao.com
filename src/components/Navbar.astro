@@ -1,0 +1,143 @@
+---
+import { Debug } from "astro/components";
+
+interface Props {
+	activePage: string;
+}
+
+const navItems = [
+	{ name: "Home", href: "/" },
+	{ name: "Skills", href: "/skills" },
+	{ name: "Projects", href: "/projects"},
+	{ name: "About", href: "/about" },
+
+];
+
+const { activePage } = Astro.props as Props;
+---
+
+<nav id='navigation-bar' class='bg-gray-300 dark:bg-gray-800 sticky top-0 z-50'>
+	<div class='max-w-9xl mx-auto px-2 md:px-6'>
+		<div class='relative flex items-center justify-between h-16'>
+			<div class='absolute inset-y-0 left-0 flex items-center md:hidden'>
+				<!-- Mobile menu button-->
+				<button
+					onclick='toggleMobileMenu()'
+					id='mobile-toggle'
+					class='inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-600 dark:hover:text-white hover:bg-gray-300 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white dark:focus:ring-gray-700'
+					aria-expanded='false'
+					aria-haspopup='true'
+					aria-label='Nav toggle'
+				>
+					<svg
+						id='nav-menu-closed'
+						class='block h-6 w-6'
+						xmlns='http://www.w3.org/2000/svg'
+						fill='none'
+						viewBox='0 0 24 24'
+						stroke='currentColor'
+					>
+						<path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 6h16M4 12h16M4 18h16'></path>
+					</svg>
+					<svg
+						id='nav-menu-open'
+						class='hidden h-6 w-6'
+						xmlns='http://www.w3.org/2000/svg'
+						fill='none'
+						viewBox='0 0 24 24'
+						stroke='currentColor'
+					>
+						<path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 18L18 6M6 6l12 12'></path>
+					</svg>
+				</button>
+			</div>
+			<div class='flex-1 flex items-center justify-center md:items-stretch md:justify-start'>
+				<div class='md:block md:mr-6 hidden'>
+					<div class='flex space-x-4 flex-row'>
+						{
+							navItems.map((item) => (
+								<a
+									href={item.href}
+									class={`text-base ${
+										activePage === item.name
+											? "text-black dark:text-white font-bold"
+											: "text-gray-800 dark:text-gray-300 hover:text-black dark:hover:text-white"
+									} flex-none px-3 py-2 rounded-md`}
+								>
+									{item.name}
+								</a>
+							))
+						}
+					</div>
+				</div>
+			</div>
+			<button class='darkmode-toggle mr-2 md:mr-0' aria-pressed='false' aria-label='Enable dark mode'>
+				<svg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' width='32' height='32' viewBox='0 0 24 24'>
+					<path
+						fill='currentColor'
+						d='M9.353 3C5.849 4.408 3 7.463 3 11.47A9.53 9.53 0 0 0 12.53 21c4.007 0 7.062-2.849 8.47-6.353C8.17 17.065 8.14 8.14 9.353 3z'
+					></path>
+				</svg>
+			</button>
+		</div>
+	</div>
+
+	<div id='mobile-menu' class='hidden'>
+		<div class='absolute w-full bg-gray-300 dark:bg-gray-800 z-40 flex flex-col md:hidden'>
+			{
+				navItems.map((item) => (
+					<a
+						href={item.href}
+						class={`${
+							activePage === item.name
+								? "text-black dark:text-white font-bold bg-gray-400 dark:bg-gray-900"
+								: "text-gray-800 hover:text-black dark:hover:text-white dark:text-gray-300 font-medium"
+						} hover:bg-gray-400 dark:hover:bg-gray-900 px-5 py-3 text-base w-full`}
+					>
+						{item.name}
+					</a>
+				))
+			}
+		</div>
+	</div>
+</nav>
+
+<script is:inline>
+	let isDarkModeOn = localStorage.getItem("darkMode");
+	let mobileMenu = false;
+
+	const toggleMobileMenu = () => {
+		mobileMenu = !mobileMenu;
+
+		if (mobileMenu) {
+			document.getElementById("mobile-menu").classList.remove("hidden");
+			document.getElementById("mobile-toggle").setAttribute("aria-expanded", "true");
+		} else {
+			document.getElementById("mobile-menu").classList.add("hidden");
+			document.getElementById("mobile-toggle").setAttribute("aria-expanded", "false");
+		}
+	};
+	const darkModeToggle = document.querySelector(".darkmode-toggle");
+
+	// functions
+	const enableDarkMode = () => {
+		document.documentElement.classList.add("dark");
+		darkModeToggle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M13 3a1 1 0 1 0-2 0v1a1 1 0 1 0 2 0V3zM5.707 4.293a1 1 0 0 0-1.414 1.414l1 1a1 1 0 0 0 1.414-1.414l-1-1zm14 0a1 1 0 0 0-1.414 0l-1 1a1 1 0 0 0 1.414 1.414l1-1a1 1 0 0 0 0-1.414zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm-9 4a1 1 0 1 0 0 2h1a1 1 0 1 0 0-2H3zm17 0a1 1 0 1 0 0 2h1a1 1 0 1 0 0-2h-1zM6.707 18.707a1 1 0 1 0-1.414-1.414l-1 1a1 1 0 1 0 1.414 1.414l1-1zm12-1.414a1 1 0 0 0-1.414 1.414l1 1a1 1 0 0 0 1.414-1.414l-1-1zM13 20a1 1 0 1 0-2 0v1a1 1 0 1 0 2 0v-1z" fill="currentColor"/></svg>`;
+		darkModeToggle.setAttribute("aria-pressed", "true");
+		darkModeToggle.setAttribute("aria-label", "Disable dark mode");
+		localStorage.setItem("darkMode", "enabled");
+	};
+	const disableDarkMode = () => {
+		document.documentElement.classList.remove("dark");
+		darkModeToggle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M9.353 3C5.849 4.408 3 7.463 3 11.47A9.53 9.53 0 0 0 12.53 21c4.007 0 7.062-2.849 8.47-6.353C8.17 17.065 8.14 8.14 9.353 3z"/></svg>`;
+		darkModeToggle.setAttribute("aria-pressed", "false");
+		darkModeToggle.setAttribute("aria-label", "Enable dark mode");
+		localStorage.removeItem("darkMode");
+	};
+	// execution
+	if (isDarkModeOn === "enabled") enableDarkMode();
+	darkModeToggle.addEventListener("click", () => {
+		isDarkModeOn = localStorage.getItem("darkMode");
+		isDarkModeOn !== "enabled" ? enableDarkMode() : disableDarkMode();
+	});
+</script>

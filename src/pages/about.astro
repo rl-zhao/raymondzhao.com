@@ -1,0 +1,91 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Card from "../components/Card.astro";
+---
+
+<BaseLayout
+	title='About'
+	activePage='About'
+	metadata={{
+		description: "Hello! I'm Raymond Zhao, and this is all about me as a person.",
+		url: "https://raymondzhao.com",
+	}}
+>
+	<div class='w-11/12 mx-auto mt-5'>
+		<div class='my-5 rounded-md font-semibold flex'>
+			<h1 class="text-3xl bg-gradient-to-r from-red-400 to-yellow-600 dark:to-yellow-400 text-transparent bg-clip-text" id="about-me">ABOUT ME</h1>
+		</div>
+	</div>
+	<div class='w-11/12 mx-auto mt-5 flex flex-col md:flex-row'>
+		<div class='rounded-md md:mr-5 mb-5 md:mb-0 p-5 bg-gray-300 dark:bg-gray-800'>
+			<img class='rounded-full h-28 w-28 mb-3 object-cover' src='/assets/about.jpg' alt='Raymond Photo' />
+			<p>Hello! I'm Raymond, an undergraduate student currently attending the University of Wisconsin-Madison.</p>
+			<p>I'm currently declared in both the Computer Science and Data Science majors.</p><br />
+			<p>
+				My first experience with coding was when I was around 8 years old, messing around with JavaScript on Khan Academy. At the beginning of
+				my time in high school, I mostly dabbled in competitive programming and Java classes, but after my first year, I started leaning more
+				seriously into web development, and as a result, over the last couple of years, I've worked on all sorts of different projects with
+				all sorts of people. I'm passionate about making websites that other people will use and enjoy.
+			</p><br />
+			<p>
+				In my free time, I play Magic: the Gathering, work on my programming projects (mostly web development), practice Rubik's Cubes, play
+				games, read manga, and cook.
+			</p><br />
+			<p>Also, the best thing to ever happen to programming is regular expressions. That's just a fact.</p>
+			<br />
+			<div class='flex flex-col md:flex-row items-center'>
+				<img class='h-60' src='/assets/State_Street.jpg' alt='Me with some friends on State Street' />
+				<p class='italic md:ml-5'>Me with some friends on State Street at UW-Madison</p>
+			</div>
+		</div>
+		<div class='rounded-md p-5 bg-gray-300 dark:bg-gray-800'>
+			<h2 class='text-center font-semibold dark:text-white text-black'>Links</h2>
+				<ul class="mt-3 mb-5">
+					<li class="flex flex-row items-center">
+						<Card name='GitHub' image='/assets/skills/GitHub.png' link='https://github.com/Stinggyray' />
+						<h3 class='ml-3 text-sm text-gray-800 dark:text-gray-200'>
+							<a href="https://github.com/rl-zhao">GitHub</a>
+						</h3>
+					</li>
+					<li class="flex flex-row items-center">
+						<Card name='GitHub' image='/assets/skills/GitHub.png' link='https://github.com/Stinggyray' />
+						<h3 class='ml-3 text-sm text-gray-800 dark:text-gray-200'>
+							<a href="https://github.com/Stinggyray">GitHub (Personal)</a>
+						</h3>
+					</li>
+					<li class="flex flex-row items-center">
+						<Card name='LinkedIn' image='/assets/LinkedIn.png' link='https://www.linkedin.com/in/raymond-l-zhao/' />
+						<h3 class='ml-3 text-sm text-gray-800 dark:text-gray-200'>
+							<a href="https://www.linkedin.com/in/raymond-l-zhao/">LinkedIn</a>
+						</h3>
+					</li>
+				</ul>
+			<h2 class='text-center font-semibold dark:text-white text-black'>Get in touch</h2>
+			<div class='flex flex-col'>
+				<p class='mb-2'>You can reach me at the following email address (This is the e-mail I check the most often, so you WILL get a response.)</p>
+				<a href='mailto:rz@raymondzhao.com' class='text-gray-800 dark:text-yellow-500 underline'>rz@raymondzhao.com</a>
+				<br>
+				<br>
+				<p class="mb-2">This is a backup email address, just in case that one isn't working:</p>
+				<a href='mailto:rlzhao@wisc.edu' class='text-gray-800 dark:text-yellow-500 underline'>rlzhao@wisc.edu</a>
+			</div>
+			<br />
+			<p>Here's an up-to-date copy <a href='/assets/Raymond_Zhao_resume.pdf' class='text-gray-800 dark:text-yellow-500 underline'>of my resume</a>.</p>
+		</div>
+	</div>
+</BaseLayout>
+
+<!--<script>-->
+<!--	import TypeIt from 'typeit';-->
+
+<!--	const aboutMe = new TypeIt("#about-me", {-->
+<!--		strings: "ABOUT ME",-->
+<!--		speed: 100,-->
+<!--		startDelay: 500,-->
+<!--		afterComplete: function (instance) {-->
+<!--			instance.destroy();-->
+<!--		}-->
+<!--	});-->
+
+<!--	aboutMe.go();-->
+<!--</script>-->
