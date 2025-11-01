@@ -12,8 +12,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 		background-size: cover;
 		background-repeat: no-repeat;
 	}
-	#portfolio {
-		background-image: url(/assets/State_Street.jpg);
+	#train {
+		background-image: url(/assets/projects/train.png);
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	#graphics-town {
+		background-image: url(/assets/projects/grtown.png);
 		background-size: cover;
 		background-repeat: no-repeat;
 	}
@@ -44,20 +49,40 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 		</div>
 		<div class="dark:text-white flex mx-auto sm:flex-row flex-col-reverse items-stretch mb-5">
 			<div class="sm:rounded-t-md rounded-b-md dark:bg-gray-800 bg-gray-300 flex-1 sm:mr-5 p-5">
-				<h2 class="text-xl text-blue-700 font-bold pb-1"><a href="https://food.stinggy.com">food.stinggy.com</a></h2>
+				<h2 class="text-xl text-purple-600 font-bold pb-1"><a href="/projects/cs559/p1/for_students/tr-01-01.html">Train</a></h2>
+				<p class="leading-snug dark:text-gray-300">A cool 2D train that follows a track of your choice, at a constant speed. The track is generated using spline interpolation.</p>
+				<p class="leading-snug mt-2 dark:text-gray-300">Built using HTML Canvas and JavaScript, for my Computer Graphics class.</p>
+			</div>
+			<div id="train" class="flex-none sm:w-1/3 w-full bg-top rounded-b-none sm:rounded-b-md rounded-t-md">
+				<img class="rounded-md sm:hidden block" src="/assets/projects/train.png" alt="Train">
+			</div>
+		</div>
+		<div class="dark:text-white flex mx-auto sm:flex-row flex-col items-stretch mb-5">
+			<div id="graphics-town" class="flex-none sm:w-1/3 w-full bg-top rounded-b-none sm:rounded-b-md rounded-t-md">
+				<img class="rounded-md sm:hidden block" src="/assets/projects/grtown.png" alt="Me and stuff">
+			</div>
+			<div class="sm:rounded-t-md rounded-b-md dark:bg-gray-800 bg-gray-300 flex-1 sm:ml-5 p-5">
+				<h2 class="text-xl text-indigo-500 font-bold pb-1"><a href="/projects/cs559/p2/for_students/gr-01-01.html">Graphics Town (Cooler Train)</a></h2>
+				<p class="leading-snug dark:text-gray-300">A quaint little lakeside town, with a train. All logic, meshes (trees, train stations, pagoda, etc.), and geometry were made by me, along with a couple of the materials and textures. Volumetric lighting and a reflective lake with good-looking water were the biggest challenges.</p>
+				<p class="leading-snug mt-2 dark:text-gray-300">Built using Three.js and JavaScript, for my Computer Graphics class.</p>
+			</div>
+		</div>
+		<div class="dark:text-white flex mx-auto sm:flex-row flex-col-reverse items-stretch mb-5">
+			<div class="sm:rounded-t-md rounded-b-md dark:bg-gray-800 bg-gray-300 flex-1 sm:mr-5 p-5">
+				<h2 class="text-xl text-blue-500 font-bold pb-1"><a href="https://food.stinggy.com">food.stinggy.com</a></h2>
 				<p class="leading-snug dark:text-gray-300">A simple website showcasing food reviews from restaurants I've tried in the Madison area.</p>
 				<p class="leading-snug mt-2 dark:text-gray-300">Built using an Express.js server, using HTML, CSS, JS. Uses Handlebars for templating, Tailwind for styling, and is hosted on a DigitalOcean VPS (behind a reverse proxy).</p>
 			</div>
 			<div id="food" class="flex-none sm:w-1/3 w-full bg-top rounded-b-none sm:rounded-b-md rounded-t-md">
-				<img class="rounded-md sm:hidden block" src="/assets/projects/food.png" alt="Sanity;Gone">
+				<img class="rounded-md sm:hidden block" src="/assets/projects/food.png" alt="Food Site">
 			</div>
 		</div>
 		<div class="dark:text-white flex mx-auto sm:flex-row flex-col items-stretch mb-5">
-			<div id="portfolio" class="flex-none sm:w-1/3 w-full bg-top rounded-b-none sm:rounded-b-md rounded-t-md">
-				<img class="rounded-md sm:hidden block" src="/assets/State_Street.jpg" alt="Sanity;Gone">
-			</div>
-			<div class="sm:rounded-t-md rounded-b-md dark:bg-gray-800 bg-gray-300 flex-1 sm:ml-5 p-5">
-				<h2 class="text-xl text-blue-500 font-bold pb-1">raymondzhao.com</h2>
+			<!--<div id="portfolio" class="flex-none sm:w-1/3 w-full bg-top rounded-b-none sm:rounded-b-md rounded-t-md">-->
+			<!--	<img class="rounded-md sm:hidden block" src="/assets/State_Street.jpg" alt="Me and stuff">-->
+			<!--</div>-->
+			<div class="sm:rounded-t-md rounded-b-md dark:bg-gray-800 bg-gray-300 flex-1 p-5">
+				<h2 class="text-xl text-blue-400 font-bold pb-1">raymondzhao.com</h2>
 				<p class="leading-snug dark:text-gray-300">My portfolio website. Believe it or not, you're on it right now.</p>
 				<p class="leading-snug mt-2 dark:text-gray-300">Built using the static site generator stack, using HTML, CSS, TypeScript. Uses Astro and Svelte as its framework, MDX for blog posts, Tailwind for styling. Is deployed via Vercel.</p>
 				<p class="leading-snug mt-2 dark:text-gray-300">Designed entirely by me, not copied from any templates. Fully responsive.</p>

@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 
 import "@fontsource/noto-sans";
+import "../styles/global.css";
 
 export interface Props {
 	title: string;
@@ -28,6 +29,7 @@ const { title, metadata, activePage, noMaxWidth } = Astro.props;
 				document.documentElement.classList.add("dark");
 			}
 		</script>
+
 		<meta charset='UTF-8' />
 		<meta name='viewport' content='width=device-width' />
 		<link rel='icon' type='image/x-icon' href='/favicon.ico' />

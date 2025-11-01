@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../libs/CS559/style559.css" />
+  </head>
+
+  <style>
+    .slider-container {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+  </style>
+
+  <body>
+  	<h1>Computer Graphics Project 1: Train</h1>
+	<p>Rendered using HTML Canvas. All logic and drawing of the train was done completely from scratch.</p>
+
+	<p>The track is made up of an interpolation between draggable points.</p>
+	<p>Click and drag to move points, shift-click to add points, ctrl-click to delete points.</p>
+    <canvas id="canvas1" height="600" width="600"></canvas>
+	<p>Check the checkbox to make the train start moving, or use the slider to set the position of the train on the track.</p>
+	<p>Tension controls how rounded the curves are (1 is straight lines, 0 is very rounded).</p>
+    <div class="slider-container">
+      <label for="tension">Tension</label>
+      <input id="tension" type="range" min="0" max="1" step="0.05" value="0" />
+      <p id="tension-label">0</p>
+    </div>
+
+    <script src="tr-01-01.js" type="module" defer></script>
+<!-- The screenshot and record buttons -->
+    <br><button onclick="screenshot('canvas1')">Screenshot</button> <button
+        onclick="record('canvas1','time')">Record</button> <input id="time" type="text" size="2" value="10"> seconds.
+    <script type="module">
+        import { screenshot, record } from "../libs/CS559/saveCanvas.js";
+        window.screenshot = screenshot;
+        window.record = record;
+    </script>
+  </body>
+</html>
+

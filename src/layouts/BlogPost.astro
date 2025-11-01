@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 
 import "@fontsource/noto-sans";
+import "../styles/global.css";
 
 const { frontmatter } = Astro.props;
 ---
@@ -17,6 +18,10 @@ const { frontmatter } = Astro.props;
 				document.documentElement.classList.add("dark");
 			}
 		</script>
+
+		<!-- load KaTeX styling -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css" integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi" crossorigin="anonymous">
+
 		<meta charset='UTF-8' />
 		<meta name='viewport' content='width=device-width' />
 		<link rel='icon' type='image/x-icon' href='/favicon.ico' />

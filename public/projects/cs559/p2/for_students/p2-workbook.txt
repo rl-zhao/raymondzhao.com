@@ -1,0 +1,119 @@
+Wisc ID: rlzhao
+GitHub ID: Stinggyray
+
+[X] correct P2 Canvas Assignment submission [none]:
+[X] clear explanations in p2-workbook.txt [none]:
+[X] correct P2G Canvas Assignment submission on time [none]:
+[X] program runs (or seems to run correctly - worth looking at error console) [final-grtown]:
+[X] frame rate seems OK (not too slow) [final-grtown]:
+[X] UI is there and seems to work (can lookat and ride) [final-grtown]:
+[X] highlight list looks OK [final-grtown]:
+[X] visually distinct from example [final-grtown]:
+[X] theme makes sense (need explanation) [final-grtown]: Lakeside small town
+[X] cool theme bonus (need explanation) [final-grtown]: I like it... I don't know, you tell me if it's cool enough
+[X] objects created for this assignment 1, not trivial, can be identified in world (need explanation) [final-grtown]: train-station (train stations for the train to stop at)
+[X] objects created for this assignment 2, not trivial, can be identified in world (need explanation) [final-grtown]: pagoda (pagoda in middle)
+[X] 5 more kinds of objects 1, not trivial, can identify (need explanation) [final-grtown]: car-1 (car from WB08 that sits near the house)
+[X] 5 more kinds of objects 2, not trivial, can identify (need explanation) [final-grtown]: trees / lathe-tree-1 (many different types of trees. I've highlighted a lathe-tree specifically)
+[X] 5 more kinds of objects 3, not trivial, can identify (need explanation) [final-grtown]: walkway-1 (pagoda walkway made out of wood.)
+[X] 5 more kinds of objects 4, not trivial, can identify (need explanation) [final-grtown]: lake (lake in the middle of the town)
+[X] 5 more kinds of objects 5, not trivial, can identify (need explanation) [final-grtown]: stone-path (stone path that leads between the train stations)
+[X] has building, natural, vehicle (need explanation) [final-grtown]: building: train stations, small houses - natural: trees, lake,
+[X] loaded model (need explanation) [final-grtown]: small-house-1 - the small-house objects are loaded in from a .obj file.
+[X] shader: identifiable and not trivial (need explanation) [final-grtown]: flag-1 - The flag with the thinking emoji on it uses a shader to achieve the effect of looking like a flag.
+[X] three behaviors you made 1, not trivial, can be identified in scene (need explanation) [final-grtown]: train - Train that follows a 2D spline and stops at two stations. (More explanations below in Advanced Points)
+[X] three behaviors you made 2, not trivial, can be identified in scene (need explanation) [final-grtown]: walking-person - Person that walks around the town (walking-person). Stops at the train barrier and waits for the train to pass if the barrier is down.
+[X] three behaviors you made 3, not trivial, can be identified in scene (need explanation) [final-grtown]: train-barrier-1 - Train barrier that drops down when the train passes by.
+[X] at least one object is rideable / followable [final-grtown]: I wasn't able to do the train perfectly - it's at a 90 degree angle. The problem was really really complicated and hard to fix, so I also added another object that's rideable/followable - the walking-person.
+[X] behavior that is not simple (need explanation) [final-grtown]: Train that goes around a 2D spline track at a constant speed, and slows down / stops / speeds up at 2 stations. Additionally, arc-length parametrization is used to generate procedural rail ties that are placed along the track.
+[X] articulated figure (need explanation) [final-grtown]: train-barrier-1 - Train barriers that go up and down when the train moves by them. They are articulated in terms of their connection to the barrier.
+[X] advanced thing 1: has a challenge type (need the name and number from the list) [final-grtown]: 2. Complex Behavior
+[X] advanced thing 1: works properly, can be identified in the town (need explanation) [final-grtown]: Train that goes around a 2D spline track, and stops at 2 stations. Additionally, arc-length parametrization is used to generate procedural rail ties that are placed along the track. Plus there are people who get on and off the train at the stations! (Yes they disappear after they get off... but they exist!)
+[X] advanced thing 1: points above and beyond (need explanation) [final-grtown]: It needed significant adaptation and lots of extra things to work in three dimensions!
+[X] advanced thing 2: has a challenge type (need the name and number from the list) [final-grtown]: 3. Complex Object
+[X] advanced thing 2: works properly, can be identified in the town (need explanation) [final-grtown]: volumetric-spot-light-1: A volumetric spotlight that shines down on the scene + the lake. It's a SpotLight that uses a shader to create a volumetric effect, making it look like there are light rays shining down on the scene. Required significant adaptation and thinking to create it and make it look good. (Do note that the effect was not created from scratch. I found an example shader, and modified it for my own purposes. The link to the original shader is in the credits - also see shaders/volumetric.fs and shaders/volumetric.vs)
+[X] advanced thing 2: points above and beyond (need explanation) [final-grtown]: I really really like the way they look. They might be my favorite object in the whole scene.
+[X] advanced thing 3: has a challenge type (need the name and number from the list) [final-grtown]: 13. Large Diversity of Objects and Behaviors
+[X] advanced thing 3: works properly, can be identified in the town (need explanation) [final-grtown]: There were a lot of objects and behaviors I created that I didn't really get to talk about in any of the other parts. The train stations have detailed benches and stairs, the different trees have generated colors and differing heights, the lake is reflective and the centerpiece, the paths are all made using Bezier curves, and almost everything is textured and looks good (ground plane too). I think it's a pretty diverse town. If you think this doesn't count, though, no worries.
+[ ] advanced thing 3: points above and beyond (need explanation) [final-grtown]:
+[ ] advanced thing 4: has a challenge type (need the name and number from the list) [final-grtown]:
+[ ] advanced thing 4: works properly, can be identified in the town (need explanation) [final-grtown]:
+[ ] advanced thing 4: points above and beyond (need explanation) [final-grtown]:
+[ ] advanced thing 5: has a challenge type (need the name and number from the list) [final-grtown]:
+[ ] advanced thing 5: works properly, can be identified in the town (need explanation) [final-grtown]:
+[ ] advanced thing 5: points above and beyond (need explanation) [final-grtown]:
+
+If you have loaded any geometry from OBJ files, use the space below to credit your source for each file. Be sure to include a confirmation that you are permitted to use this asset (e.g., it is released under a Creative Commons license).
+
+You can follow this format, or something similar:
+
+- an-example-file.obj
+  - source: https://graphics.cs.wisc.edu/Courses/559-sp2021/
+  - author: username123
+ - license: CC BY 2.0
+
+
+Note: I originally considered putting the lake down as advanced points, but decided not to. This is because I didn't write the lake effect itself. I did try to write my own water shader, but it didn't work out. I ended up using the THREE.js water shader, which I modified to work with the CS559 framework. I did have to do some adaptation, but I don't necessarily think that was enough to warrant advanced points.
+
+Also, just to reiterate: I did not write the files in external/water. Everything in the external/ folder, I did not make.
+For more information, see external/README.txt.
+
+Below are all the sources I used this project. If a file is not listed here, it is my own original work.
+
+- sky-cubemap: Kloppenheim 06 - HDRI Haven
+  - source: https://polyhaven.com/a/kloppenheim_06_puresky
+  - author: Greg Zaal, Jarod Guest
+  - license: CC0
+  - converted to cubemap using https://matheowis.github.io/HDRI-to-CubeMap/
+
+- small-house: Model downloaded from Free3D
+  - source: https://free3d.com/3d-model/wooden-house-752597.html
+  - author: abhijithcheruvery
+  - license: Personal Use License
+
+- AmbientCG - most of the external textures are from here
+  - source: https://ambientcg.com
+  - author: AmbientCG (by Lennart Demes)
+  - license: CC0
+  - All external textures used:
+    - RoofingTiles001 (used for train stations): https://ambientcg.com/view?id=RoofingTiles001
+    - Wood060 (used for rail ties / benches / wooden stuff): https://ambientcg.com/view?id=Wood060
+    - ScatteredLeaves001 (used for trees): https://ambientcg.com/view?id=ScatteredLeaves001
+    - PavingStones128 (used for train stations): https://ambientcg.com/view?id=PavingStones128
+    - PavingStones134 (used for stone path): https://ambientcg.com/view?id=PavingStones134
+    - Grass001 (used for grass on world plane): https://ambientcg.com/view?id=Grass001
+    - Concrete034 (used for pagoda): https://ambientcg.com/view?id=Concrete034
+
+- Water
+  - source:
+    - Material and code taken from THREE.js examples - Water https://threejs.org/examples/?q=water#webgl_water
+      - I had to modify it to work with the CS559 framework
+      - Link to source code: https://github.com/mrdoob/three.js/blob/master/examples/jsm/objects/Water2.js
+      - (and Reflector.js and Refractor.js in the same place)
+    - Water normal pictures (Water_1_M_Normal.jpg, Water_2_M_Normal.jpg) are taken from the example as well
+      - Link: https://github.com/mrdoob/three.js/tree/master/examples/textures/water
+  - author: Slayvin, mrdoob, and others
+  - license: MIT
+
+- Failed Water (not used in finished project)
+  - source:
+    - waternormals.jpg - taken from the other THREE.js water example https://threejs.org/examples/?q=water#webgl_shaders_ocean
+      - Link: https://github.com/mrdoob/three.js/blob/master/examples/textures/waternormals.jpg
+  - author: jbouny, mrdoob, and others
+  - license: MIT
+
+- Train Icon (used on Green Line train sign for the train stations)
+  - source: https://commons.wikimedia.org/wiki/File:264_Metroo.svg
+  - author: Caro Asercion
+  - license: CC 3.0
+
+- Volumetric Lights
+  - source: https://github.com/jeromeetienne/threex.volumetricspotlight
+    - I created an object using this shader and modified it to work with the CS559 framework.
+  - author: jeromeetienne
+  - license: MIT
+
+- Thinking Emoji (used on the flag)
+  - source: Twemoji - Wikimedia Commons image source link: https://commons.wikimedia.org/wiki/File:Twemoji2_1f914.svg
+  - author: Twitter
+  - license: CC 4.0
